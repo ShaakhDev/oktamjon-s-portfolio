@@ -1,6 +1,6 @@
 .toasts__wrapper {
 	position: fixed;
-	top: 70px;
+	top: 100px;
 	left: 30px;
 	z-index: 999;
 }
@@ -8,7 +8,6 @@
 .toast {
 	border: 2px solid transparent;
 	background-color: white;
-	/* linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%); */
 	color: #4a2fbd;
 	border-radius: 4px;
 	max-width: 480px;
