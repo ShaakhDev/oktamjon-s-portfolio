@@ -15,7 +15,7 @@ export const ProjectCard = ({
 				<img src={image_url} alt="project" />
 				<div className="proj-txtx">
 					<h4>{title}</h4>
-					<span>{text}</span>
+					<span>{text.length > 70 ? `${text.slice(0, 70)}...` : text}</span>
 					<br />
 					{github_link && (
 						<a

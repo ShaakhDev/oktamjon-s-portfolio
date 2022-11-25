@@ -31,7 +31,7 @@ export const Contact = () => {
 
 		emailjs
 			.send(
-				"gmail",
+				process.env.REACT_APP_SERVICE_ID,
 				process.env.REACT_APP_EMAIL_TEMPLATE_ID,
 				{
 					name: `${formDetails.firstName} ${formDetails.lastName}`,
@@ -56,10 +56,8 @@ export const Contact = () => {
 		<section className="contact" id="connect">
 			<Container>
 				<Row className="align-items-center">
-					<Col size={12} md={6}>
-						<TrackVisibility>
-							{() => <img src={contactImg} alt="Contact Us" />}
-						</TrackVisibility>
+					<Col size={12} md={6} className="contact-bg">
+						<img src={contactImg} alt="Contact Us" />
 					</Col>
 					<Col size={12} md={6}>
 						<TrackVisibility>
@@ -68,7 +66,7 @@ export const Contact = () => {
 									<h2>Get In Touch</h2>
 									<form onSubmit={handleSubmit}>
 										<Row>
-											<Col size={12} sm={6} className="px-1">
+											<Col size={12} sm={6} className="px-2">
 												<input
 													type="text"
 													value={formDetails.firstName}
@@ -78,7 +76,7 @@ export const Contact = () => {
 													}
 												/>
 											</Col>
-											<Col size={12} sm={6} className="px-1">
+											<Col size={12} sm={6} className="px-2">
 												<input
 													type="text"
 													value={formDetails.lasttName}
@@ -88,7 +86,7 @@ export const Contact = () => {
 													}
 												/>
 											</Col>
-											<Col size={12} sm={6} className="px-1">
+											<Col size={12} sm={6} className="px-2">
 												<input
 													type="email"
 													value={formDetails.email}
@@ -96,7 +94,7 @@ export const Contact = () => {
 													onChange={e => onFormUpdate("email", e.target.value)}
 												/>
 											</Col>
-											<Col size={12} sm={6} className="px-1">
+											<Col size={12} sm={6} className="px-2">
 												<input
 													type="tel"
 													value={formDetails.phone}
@@ -104,7 +102,7 @@ export const Contact = () => {
 													onChange={e => onFormUpdate("phone", e.target.value)}
 												/>
 											</Col>
-											<Col size={12} className="px-1">
+											<Col size={12} className="px-2">
 												<textarea
 													rows="6"
 													value={formDetails.message}
@@ -117,17 +115,6 @@ export const Contact = () => {
 													<span>{buttonText}</span>
 												</button>
 											</Col>
-											{/* {status.message && (
-												<Col>
-													<p
-														className={
-															status.success === false ? "danger" : "success"
-														}
-													>
-														{status.message}
-													</p>
-												</Col>
-											)} */}
 										</Row>
 									</form>
 								</div>

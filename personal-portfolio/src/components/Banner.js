@@ -11,8 +11,11 @@ export const Banner = () => {
 	const [isDeleting, setIsDeleting] = useState(false);
 	const [text, setText] = useState("");
 	const [delta, setDelta] = useState(300 - Math.random() * 100);
-	const [index, setIndex] = useState(1);
-	const toRotate = ["Web Backend developer", "Telegram bot developer"];
+	const toRotate = [
+		"Backend developer",
+		"Python Developer",
+		"Telegram bot developer",
+	];
 	const period = 2000;
 
 	useEffect(() => {
@@ -50,15 +53,11 @@ export const Banner = () => {
 
 		if (!isDeleting && updatedText === fullText) {
 			setIsDeleting(true);
-			setIndex(prevIndex => prevIndex - 1);
 			setDelta(period);
 		} else if (isDeleting && updatedText === "") {
 			setIsDeleting(false);
 			setLoopNum(loopNum + 1);
-			setIndex(1);
 			setDelta(500);
-		} else {
-			setIndex(prevIndex => prevIndex + 1);
 		}
 	};
 
@@ -67,31 +66,24 @@ export const Banner = () => {
 			<Container>
 				<Row className="align-items-center">
 					<Col xs={12} md={6} xl={7}>
-						<TrackVisibility>
-							{() => (
-								<div>
-									<span className="tagline">Welcome to my Portfolio</span>
-									<h1>
-										{`Hi! I'm O’ktamjon`}{" "}
-										<span
-											className="txt-rotate"
-											data-rotate='[ "Web Developer", "API Developer", "Telegram bot Developer" ]'
-										>
-											<span className="wrap">{text}</span>
-										</span>
-									</h1>
-									<p>{description}</p>
-									<a
-										className="text-decoration-none text-white "
-										href="#connect"
-									>
-										Let’s Connect <ArrowRightCircle size={25} />
-									</a>
-								</div>
-							)}
-						</TrackVisibility>
+						<div className="banner-box">
+							<span className="tagline">Welcome to my Portfolio</span>
+							<h1>
+								{`Hi! I'm O’ktamjon`}{" "}
+								<span
+									className="txt-rotate"
+									data-rotate='[ "Web Developer", "API Developer", "Telegram bot Developer" ]'
+								>
+									<span className="wrap">{text}</span>
+								</span>
+							</h1>
+							<p>{description}</p>
+							<a className="text-decoration-none text-white " href="#connect">
+								Let’s Connect <ArrowRightCircle size={25} />
+							</a>
+						</div>
 					</Col>
-					<Col xs={12} md={6} xl={5}>
+					<Col xs={12} md={6} xl={5} className="banner-img">
 						<TrackVisibility>
 							{({ isVisible }) => (
 								<div>
