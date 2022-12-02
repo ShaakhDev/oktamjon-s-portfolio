@@ -3,8 +3,6 @@ import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 
 import colorSharp2 from "../assets/img/color-sharp2.png";
-import "animate.css";
-import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
 	const [allCategories, setAllCategories] = useState([]);
@@ -41,7 +39,6 @@ export const Projects = () => {
 			<Container>
 				<Row>
 					<Col size={12}>
-						{/* <div> */}
 						<h2>Projects</h2>
 
 						<Tab.Container id="projects-tabs" defaultActiveKey="0">
@@ -81,7 +78,6 @@ export const Projects = () => {
 								))}
 							</Tab.Content>
 						</Tab.Container>
-						{/* </div> */}
 					</Col>
 				</Row>
 			</Container>
