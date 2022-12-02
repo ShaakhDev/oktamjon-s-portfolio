@@ -21,6 +21,7 @@ export const ProjectCard = ({
 						<a
 							title="go to the github repository"
 							className="github-link"
+							rel="noreferrer noopener"
 							target="_blank"
 							href={github_link}
 						>
@@ -31,6 +32,7 @@ export const ProjectCard = ({
 						<a
 							title="go to the demo"
 							target="_blank"
+							rel="noreferrer noopener"
 							className="demo-link"
 							href={demo_link}
 						>
