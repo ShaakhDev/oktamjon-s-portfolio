@@ -21,13 +21,19 @@ export const ProjectCard = ({
 						<a
 							title="go to the github repository"
 							className="github-link"
+							target="_blank"
 							href={github_link}
 						>
 							<img src={github} alt="github" />
 						</a>
 					)}
 					{demo_link && (
-						<a title="go to the demo" className="demo-link" href={demo_link}>
+						<a
+							title="go to the demo"
+							target="_blank"
+							className="demo-link"
+							href={demo_link}
+						>
 							<img src={demo} alt="demo" />
 						</a>
 					)}
